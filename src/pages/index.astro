@@ -1,4 +1,9 @@
 ---
+	import './styles/global.css';
+	import Navigation from '../components/Navigation.astro';
+
+	const pageTitle = 'Home';
+	const skills = ['HMTL/CSS', 'JavaScript', 'React', 'Open Source', 'Personal dev experiences']
 ---
 
 <html lang="en">
@@ -7,11 +12,15 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Home</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a href="/about/">About</a>
-		<a href="/blog/">Blog</a>
-		<h1>My new astro blog</h1>
-	</body>
+		<Navigation />
+		<h1>Welcome to ma blog!</h1>
+
+		<p>Hello, friends! Thank you for visiting my blog. I am Emy, technical writer, and front end developer. I'm excited to share content here with you, and I hope that my articles help and inspire other devs.</p>
+
+    <h2>What do I write about?</h2>
+		<ul>{skills.map((skill)=> <li>{skill}</li>)}</ul>
+
 </html>
