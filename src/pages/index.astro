@@ -1,27 +1,52 @@
 ---
 	
 	import Navigation from '../components/Navigation.astro';
+	import Footer from '../components/Footer.astro';
+	import thumbnail from "../images/thumbnail.png";
+
 
 	const pageTitle = 'Home';
-	const skills = ['HMTL/CSS', 'JavaScript', 'React', 'Open Source', 'Personal dev experiences']
+	
+
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body>
+	<body class="">
 		<Navigation />
-		<h1 class="text-blue-500">Welcome to ma blog!</h1>
+		
+		<main class="absolute">
+			<div class="flex content-center items-center flex-col bg-teal p-20">
+				<h1 class="text-4xl font-bold border-2 bg-teal-100 p-4 rounded-md text-dark">Web development. Tips and Tricks. Fun</h1>
+			</div>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#6ab8a7" fill-opacity="1" d="M0,64L80,53.3C160,43,320,21,480,26.7C640,32,800,64,960,80C1120,96,1280,96,1360,96L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
 
-		<p>Hello, friends! Thank you for visiting my blog. I am Emy, technical writer, and front end developer. I'm excited to share content here with you, and I hope that my articles help and inspire other devs.</p>
+			
+			<div class="border-2 border-snow shadow-xl flex-col relative grid grid-cols-2 gap-4 bg-snow bottom-96 m-16 rounded-lg p-3 items-center">
+				<div>
+					<img src={thumbnail} alt="" class="object-contain">
+				</div>
+				<div class="p-3">
+					<h2 class="text-2xl font-bold text-dark">9 Soft Skills for Open Source Maintainers</h2>
+					<p class="my-3 text-xl">Thought of becoming a maintainer? In this article, I show you how much I learned just by starting an open source project of my own.
+					</p>
 
-    	<h2>What do I write about?</h2>
-		<ul>{skills.map((skill)=> <li>{skill}</li>)}</ul>
+					<a href="/blog/" class="rounded-full border-2 px-3 py-2 border-teal text-teal">Read more</a>
+				</div>
+
+			</div>
+			
+		</main>
+		
+
+		<div class="border-4 bottom-0 w-full flex justify-center p-3"><Footer /></div>
+		
 	
 	</body>
 

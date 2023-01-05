@@ -1,3 +1,16 @@
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+---
+	import logo from "../images/logo.png";
+---
+
+<div class="flex justify-between text-dark items-center px-6">
+    <div>
+        <img src={logo} alt="" width="130">
+    </div>
+    
+    <div class="group">
+        <a href="/" class="m-3 rounded-full border-2 p-2 border-teal text-teal group-hover:bg-teal group-hover:text-dark shadow-md">Home</a>
+        <a href="/about/" class="m-3 rounded-full border-2 p-2 border-teal text-teal">About</a>
+        <a href="/blog/" class="m-3 rounded-full border-2 p-2 border-teal text-teal">Articles</a>
+        <a href="/" class="m-3 rounded-full border-2 p-2 border-teal text-teal">My Portfolio</a>
+    </div>
+</div>
