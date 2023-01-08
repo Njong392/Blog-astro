@@ -2,14 +2,16 @@
 	import logo from "../images/logo.png";
 ---
 
-<div class="flex justify-between text-dark items-center px-6">
+<div class="flex justify-between text-dark items-center px-12">
     <div>
-        <img src={logo} alt="" width="130">
+        
+        <a href="/" class="cursor-pointer">
+            <img src={logo} alt="" width="130">
+        </a>
     </div>
     
     <div class="group">
-        <a href="/" class="m-3 rounded-full border-2 p-2 border-teal text-teal group-hover:bg-teal group-hover:text-dark shadow-md">Home</a>
-        <a href="/about/" class="m-3 rounded-full border-2 p-2 border-teal text-teal">About</a>
+        <a href="/" class="m-3 rounded-full border-2 p-2 border-teal text-teal group-hover:bg-teal group-hover:text-dark shadow-md">About</a>
         <a href="/blog/" class="m-3 rounded-full border-2 p-2 border-teal text-teal">Articles</a>
         <a href="/" class="m-3 rounded-full border-2 p-2 border-teal text-teal">My Portfolio</a>
     </div>
