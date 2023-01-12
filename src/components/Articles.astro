@@ -4,7 +4,7 @@ import thumbnail from "../images/thumbnail.png";
 
 
 <h1 class="text-4xl font-bold text-dark ml-16 underline decoration-teal decoration-wavy decoration-4">Read more from me</h1>
-<div class="grid grid-cols-3 mx-16 gap-6 items-center mt-8">
+<div class="grid grid-cols-3 mx-16 gap-6 items-center mt-8 mb-10">
     <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img
           alt="Office"
@@ -58,9 +58,34 @@ import thumbnail from "../images/thumbnail.png";
         </div>
       </article>
 
-      <div class="text-center">
-        <a href="/blog/" class="border-2 rounded-full border-teal text-teal hover:bg-teal hover:text-snow px-3 py-2 font-bold">See more articles</a>
-      </div>
+      <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+        <img
+          alt="Office"
+          src={thumbnail}
+          class="h-56 w-full object-cover"
+        />
+      
+        <div class="bg-white p-4 sm:p-6">
+          <time datetime="2022-10-10" class="block text-xs text-gray-500">
+            10th Oct 2022
+          </time>
+      
+          <a href="#">
+            <h3 class="mt-0.5 text-lg text-gray-900">
+              How to position your furniture for positivity
+            </h3>
+          </a>
+      
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+            dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
+            sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta?
+          </p>
+        </div>
+      </article>
 
+</div>
 
+<div class="text-center">
+  <a href="/blog/" class="border-2 rounded-full border-teal text-teal hover:bg-teal hover:text-snow px-3 py-2 font-bold">See more articles</a>
 </div>
