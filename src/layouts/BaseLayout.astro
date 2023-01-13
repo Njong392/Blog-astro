@@ -9,6 +9,7 @@
 
 	const { pageTitle } = Astro.props;
 	
+	
 
 ---
 
@@ -53,6 +54,43 @@
 			</div>
 
 			<h1 class="text-4xl font-bold text-dark ml-16 underline decoration-teal decoration-wavy decoration-4 mt-9">Read articles with a specific tag</h1>
+			<div class="flex m-16 flex-wrap gap-3">
+				<a class="group relative inline-block focus:outline-none focus:ring" href="/tags/astro">
+ 			 		<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+
+  					<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">astro</span>
+				</a>
+
+				<a class="group relative inline-block focus:outline-none focus:ring" href="/download">
+					<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+
+					<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">successes</span>
+			  	</a>
+
+			  	<a class="group relative inline-block focus:outline-none focus:ring" href="/download">
+					<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+
+					<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">community</span>
+		  		</a>
+
+				<a class="group relative inline-block focus:outline-none focus:ring" href="/download">
+					<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+
+					<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">blogging</span>
+		  		</a>
+
+				<a class="group relative inline-block focus:outline-none focus:ring" href="/download">
+					<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+
+					<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">setbacks</span>
+		  		</a>
+
+				<a class="group relative inline-block focus:outline-none focus:ring" href="/download">
+					<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+
+					<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">learning in public</span>
+		  		</a>
+			</div>
 			<slot />
 
 			<Articles />
