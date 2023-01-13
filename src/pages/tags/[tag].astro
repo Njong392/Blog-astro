@@ -22,8 +22,36 @@ const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag)
 
 
 <BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
-  <ul>
-    {filteredPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-  </ul>
+  <h2 class="text-3xl m-16 font-bold text-dark">Posts tagged with {tag}</h2>
+  <div class="grid grid-cols-3 mx-16 gap-6 items-center mt-8 mb-10">
+    {filteredPosts.map((post) => 
+    
+
+    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+        <img
+          alt="Office"
+          src={post.frontmatter.image.url}
+          class="h-56 w-full object-cover"
+        />
+      
+        <div class="bg-white p-4 sm:p-6">
+          <time datetime="2022-10-10" class="block text-xs text-gray-500">
+            {post.frontmatter.pubDate}
+          </time>
+      
+          <a href={post.url}>
+            <h3 class="mt-0.5 text-lg text-gray-900">
+              {post.frontmatter.title}
+            </h3>
+          </a>
+      
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+            {post.frontmatter.description}
+          </p>
+        </div>
+      </article>
+    
+    )}
+  </div>
+
 </BaseLayout>
