@@ -36,7 +36,7 @@ const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag)
       
         <div class="bg-white p-4 sm:p-6">
           <time datetime="2022-10-10" class="block text-xs text-gray-500">
-            {post.frontmatter.pubDate}
+            {post.frontmatter.pubDate.slice(0,10)}
           </time>
       
           <a href={post.url}>
