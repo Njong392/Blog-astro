@@ -10,11 +10,11 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "prettier --check .",
-    "format": "prettier --write"
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "prettier --write . && git add -A"
+      "pre-commit": "prettier --write . && git add -A ."
     }
   },
   "dependencies": {
