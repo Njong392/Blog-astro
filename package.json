@@ -14,7 +14,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "prettier --write . && git add ."
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "lint-staged": {
+      "*": "prettier --write"
     }
   },
   "dependencies": {
