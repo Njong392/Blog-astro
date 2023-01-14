@@ -13,7 +13,9 @@
     "format": "prettier --write"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "pre-commit": "prettier --write . && git add -A"
+    }
   },
   "dependencies": {
     "@astrojs/rss": "^2.0.0",
