@@ -1,57 +1,59 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-const allPosts = await Astro.glob('../posts/*.md');
+  const allPosts = await Astro.glob("../posts/*.md");
 
   return [
-    {params: {tag: "astro"}, props: {posts: allPosts}},
-    {params: {tag: "successes"}, props: {posts: allPosts}},
-    {params: {tag: "community"}, props: {posts: allPosts}},
-    {params: {tag: "blogging"}, props: {posts: allPosts}},
-    {params: {tag: "setbacks"}, props: {posts: allPosts}},
-    {params: {tag: "learning in public"}, props: {posts: allPosts}}
+    { params: { tag: "astro" }, props: { posts: allPosts } },
+    { params: { tag: "successes" }, props: { posts: allPosts } },
+    { params: { tag: "community" }, props: { posts: allPosts } },
+    { params: { tag: "blogging" }, props: { posts: allPosts } },
+    { params: { tag: "setbacks" }, props: { posts: allPosts } },
+    { params: { tag: "learning in public" }, props: { posts: allPosts } },
   ];
 }
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag));
-
+const filteredPosts = posts.filter((post) =>
+  post.frontmatter.tags.includes(tag)
+);
 ---
 
-
 <BaseLayout pageTitle={tag}>
-  <h2 class="text-3xl m-16 font-bold text-dark">Posts tagged with {tag}</h2>
-  <div class="grid grid-cols-3 mx-16 gap-6 items-center mt-8 mb-10">
-    {filteredPosts.map((post) => 
-    
+  <h2 class="text-3xl m-8 md:m-16 font-bold text-dark">
+    Posts tagged with {tag}
+  </h2>
+  <div
+    class="md:grid grid-cols-3 mx-8 md:mx-16 gap-6 items-center mt-8 mb-10block"
+  >
+    {
+      filteredPosts.map((post) => (
+        <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg mb-5">
+          <img
+            alt="Office"
+            src={post.frontmatter.image.url}
+            class="h-56 w-full object-cover"
+          />
 
-    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-        <img
-          alt="Office"
-          src={post.frontmatter.image.url}
-          class="h-56 w-full object-cover"
-        />
-      
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-10-10" class="block text-xs text-gray-500">
-            {post.frontmatter.pubDate.slice(0,10)}
-          </time>
-      
-          <a href={post.url}>
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              {post.frontmatter.title}
-            </h3>
-          </a>
-      
-          <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
-            {post.frontmatter.description}
-          </p>
-        </div>
-      </article>
-    
-    )}
+          <div class="bg-white p-4 sm:p-6">
+            <time datetime="2022-10-10" class="block text-xs text-gray-500">
+              {post.frontmatter.pubDate.slice(0, 10)}
+            </time>
+
+            <a href={post.url}>
+              <h3 class="mt-0.5 text-lg text-gray-900">
+                {post.frontmatter.title}
+              </h3>
+            </a>
+
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+              {post.frontmatter.description}
+            </p>
+          </div>
+        </article>
+      ))
+    }
   </div>
-
 </BaseLayout>
