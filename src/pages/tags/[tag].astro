@@ -22,12 +22,12 @@ const filteredPosts = posts.filter((post) => post.frontmatter.tags.includes(tag)
 
 
 <BaseLayout pageTitle={tag}>
-  <h2 class="text-3xl m-16 font-bold text-dark">Posts tagged with {tag}</h2>
-  <div class="grid grid-cols-3 mx-16 gap-6 items-center mt-8 mb-10">
+  <h2 class="text-3xl m-8 md:m-16 font-bold text-dark">Posts tagged with {tag}</h2>
+  <div class="md:grid grid-cols-3 mx-8 md:mx-16 gap-6 items-center mt-8 mb-10block">
     {filteredPosts.map((post) => 
     
 
-    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg mb-5">
         <img
           alt="Office"
           src={post.frontmatter.image.url}

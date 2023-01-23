@@ -5,6 +5,8 @@
 	import Footer from '../components/Footer.astro';
 	import thumbnail from "../images/thumbnail.png";
 	import keyboard from "../images/keyboard.png";
+	
+
 
 	
 	const allPosts = await Astro.glob('../pages/posts/*.md');
@@ -31,38 +33,38 @@
 			<header class="flex content-center items-center flex-col bg-teal px-20 py-12">
 				<h1 class="text-4xl font-bold border-2 bg-teal-100 p-4 rounded-md text-dark">Web development. Tips and Tricks. Fun</h1>
 
-				<div class="grid grid-cols-2 bg-teal items-center pl-48">
+				<div class="md:grid grid-cols-2 bg-teal items-center md:pl-48 block">
 					<div>
 						<h2 class="text-3xl text-dark font-bold">Hello, welcome to my blog!</h2>
-						<p class="text-lg text-dark mt-3">You've reached my secret lair, and I'm happy. I write articles around topics I'm learning, web development, open source, and fun tips and trics I use to spice up my work. I hope you stick around.</p>
+						<p class="text-lg text-dark mt-3">You've reached my secret lair, and I'm happy. I write articles around topics I'm learning, web development, open source, and fun tips and tricks I use to spice up my work. I hope you stick around.</p>
 					</div>
 	
-					<img src={keyboard} alt="" width="400">
+					<img src={keyboard} alt="" width="400" class="hidden md:block">
 				</div>
 			</header>
 
 			
-			<div class="border-2 border-snow shadow-xl flex-col grid grid-cols-2 gap-4 bg-snow rounded-lg p-3 items-center m-16">
+			<div class="border-2 border-snow shadow-xl flex-col md:grid grid-cols-2 gap-4 bg-snow rounded-lg p-3 items-center m-8 md:m-16 block">
 				<div>
 					<img src={thumbnail} alt="" class="object-contain">
 				</div>
 				<div class="p-3">
 					<h2 class="text-2xl font-bold text-dark">9 Soft Skills for Open Source Maintainers</h2>
-					<p class="my-3 text-xl">Thought of becoming a maintainer? In this article, I show you how much I learned just by starting an open source project of my own.
+					<p class="my-3 md:text-xl text-s">Thought of becoming a maintainer? In this article, I show you how much I learned just by starting an open source project of my own.
 					</p>
 
-					<a href="/blog/" class="rounded-full border-2 px-3 py-2 border-teal text-teal">Read more</a>
+					<a href="https://www.freecodecamp.org/news/practical-skills-for-open-source-maintainers/" class="rounded-full border-2 px-3 py-2 border-teal text-teal">Read more</a>
 				</div>
 
 			</div>
 
-			<h1 class="text-4xl font-bold text-dark ml-16 underline decoration-teal decoration-wavy decoration-4 mt-9">Read articles with a specific tag</h1>
-			<div class="flex m-16 flex-wrap gap-3">
+			<h1 class="text-4xl font-bold text-dark ml-8 md:ml-16 underline decoration-teal decoration-wavy decoration-4 mt-9">Read articles with a specific tag</h1>
+			<div class="flex m-8 md:m-16 flex-wrap gap-3">
 				{tags.map((tag) => (
 					<a class="group relative inline-block focus:outline-none focus:ring" href={`/tags/${tag}`}>
  			 			<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
 
-  						<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">{tag}</span>
+  						<span class="relative inline-block border-2 border-current md:px-4 md:py-3 px-2 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">{tag}</span>
 					</a>
 				))}
 				

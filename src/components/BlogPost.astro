@@ -1,5 +1,30 @@
 ---
-const {title, url} = Astro.props
+const {title, url, thumbnail, description} = Astro.props
 ---
 
-<li><a href={url}>{title}</a></li>
+<li>
+    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg mb-5">
+        <img
+          alt="Office"
+          src={thumbnail}
+          class="h-56 w-full object-cover"
+        />
+      
+        <div class="bg-white p-4 sm:p-6">
+          <time class="block text-xs text-gray-500">
+            2022-11-14
+          </time>
+      
+          <a href={url}>
+            <h3 class="mt-0.5 text-lg text-gray-900">
+             {title}
+            </h3>
+          </a>
+      
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+           {description}
+          </p>
+        </div>
+      </article>
+
+</li>

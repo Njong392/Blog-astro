@@ -15,10 +15,11 @@
 	</head>
 	<body>
     <Navigation />
-		<h1>My new astro blog</h1>
+	
+	<h1 class="text-4xl font-bold text-dark ml-8 md:ml-16 underline decoration-teal decoration-wavy decoration-4 mt-5">All My Articles</h1>
 
-    <ul>
-		{allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+    <ul class="md:grid grid-cols-3 mx-8 md:mx-16 gap-6 items-center mt-8 mb-10 block">
+		{allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} thumbnail={post.frontmatter.image.url} description={post.frontmatter.description} />)}
     </ul>
 	</body>
 </html>
