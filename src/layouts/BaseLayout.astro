@@ -1,84 +1,113 @@
 ---
-	
-	import Navigation from '../components/Navigation.astro';
-	import Articles from '../components/Articles.astro';
-	import Footer from '../components/Footer.astro';
-	import thumbnail from "../images/thumbnail.png";
-	import keyboard from "../images/keyboard.png";
+import Navigation from "../components/Navigation.astro";
+import Articles from "../components/Articles.astro";
+import Footer from "../components/Footer.astro";
+import thumbnail from "../images/thumbnail.png";
+import keyboard from "../images/keyboard.png";
 
-	
-	const allPosts = await Astro.glob('../pages/posts/*.md');
-	const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 
-	const { pageTitle } = Astro.props;
-	
-	
-
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Navigation />
-		
-		<main>
-			<header class="flex content-center items-center flex-col bg-teal px-20 py-12">
-				<h1 class="text-4xl font-bold border-2 bg-teal-100 p-4 rounded-md text-dark">Web development. Tips and Tricks. Fun</h1>
+  <head>
+    <meta charset="utf-8" />
 
-				<div class="grid grid-cols-2 bg-teal items-center pl-48">
-					<div>
-						<h2 class="text-3xl text-dark font-bold">Hello, welcome to my blog!</h2>
-						<p class="text-lg text-dark mt-3">You've reached my secret lair, and I'm happy. I write articles around topics I'm learning, web development, open source, and fun tips and trics I use to spice up my work. I hope you stick around.</p>
-					</div>
-	
-					<img src={keyboard} alt="" width="400">
-				</div>
-			</header>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Navigation />
 
-			
-			<div class="border-2 border-snow shadow-xl flex-col grid grid-cols-2 gap-4 bg-snow rounded-lg p-3 items-center m-16">
-				<div>
-					<img src={thumbnail} alt="" class="object-contain">
-				</div>
-				<div class="p-3">
-					<h2 class="text-2xl font-bold text-dark">9 Soft Skills for Open Source Maintainers</h2>
-					<p class="my-3 text-xl">Thought of becoming a maintainer? In this article, I show you how much I learned just by starting an open source project of my own.
-					</p>
+    <main>
+      <header
+        class="flex content-center items-center flex-col bg-teal px-20 py-12"
+      >
+        <h1
+          class="text-4xl font-bold border-2 bg-teal-100 p-4 rounded-md text-dark"
+        >
+          Web development. Tips and Tricks. Fun
+        </h1>
 
-					<a href="/blog/" class="rounded-full border-2 px-3 py-2 border-teal text-teal">Read more</a>
-				</div>
+        <div class="md:grid grid-cols-2 bg-teal items-center md:pl-48 block">
+          <div>
+            <h2 class="text-3xl text-dark font-bold">
+              Hello, welcome to my blog!
+            </h2>
+            <p class="text-lg text-dark mt-3">
+              You've reached my secret lair, and I'm happy. I write articles
+              around topics I'm learning, web development, open source, and fun
+              tips and tricks I use to spice up my work. I hope you stick
+              around.
+            </p>
+          </div>
 
-			</div>
+          <img src={keyboard} alt="" width="400" class="hidden md:block" />
+        </div>
+      </header>
 
-			<h1 class="text-4xl font-bold text-dark ml-16 underline decoration-teal decoration-wavy decoration-4 mt-9">Read articles with a specific tag</h1>
-			<div class="flex m-16 flex-wrap gap-3">
-				{tags.map((tag) => (
-					<a class="group relative inline-block focus:outline-none focus:ring" href={`/tags/${tag}`}>
- 			 			<span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+      <div
+        class="border-2 border-snow shadow-xl flex-col md:grid grid-cols-2 gap-4 bg-snow rounded-lg p-3 items-center m-8 md:m-16 block"
+      >
+        <div>
+          <img src={thumbnail} alt="" class="object-contain" />
+        </div>
+        <div class="p-3">
+          <h2 class="text-2xl font-bold text-dark">
+            9 Soft Skills for Open Source Maintainers
+          </h2>
+          <p class="my-3 md:text-xl text-s">
+            Thought of becoming a maintainer? In this article, I show you how
+            much I learned just by starting an open source project of my own.
+          </p>
 
-  						<span class="relative inline-block border-2 border-current px-4 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">{tag}</span>
-					</a>
-				))}
-				
-			</div>
-			<slot />
+          <a
+            href="https://www.freecodecamp.org/news/practical-skills-for-open-source-maintainers/"
+            class="rounded-full border-2 px-3 py-2 border-teal text-teal"
+            >Read more</a
+          >
+        </div>
+      </div>
 
-			<Articles />
+      <h1
+        class="text-4xl font-bold text-dark ml-8 md:ml-16 underline decoration-teal decoration-wavy decoration-4 mt-9"
+      >
+        Read articles with a specific tag
+      </h1>
+      <div class="flex m-8 md:m-16 flex-wrap gap-3">
+        {
+          tags.map((tag) => (
+            <a
+              class="group relative inline-block focus:outline-none focus:ring"
+              href={`/tags/${tag}`}
+            >
+              <span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0" />
 
-			
-		</main>
-		
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#6ab8a7" fill-opacity="1" d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,229.3C672,256,768,288,864,298.7C960,309,1056,299,1152,272C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-       
-		<div class="bottom-0 w-full flex justify-center p-3 bg-teal"><Footer /></div>
-		
-	
-	</body>
+              <span class="relative inline-block border-2 border-current md:px-4 md:py-3 px-2 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">
+                {tag}
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <slot />
 
+      <Articles />
+    </main>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+      ><path
+        fill="#6ab8a7"
+        fill-opacity="1"
+        d="M0,288L48,266.7C96,245,192,203,288,192C384,181,480,203,576,229.3C672,256,768,288,864,298.7C960,309,1056,299,1152,272C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
+
+    <div class="bottom-0 w-full flex justify-center p-3 bg-teal">
+      <Footer />
+    </div>
+  </body>
 </html>

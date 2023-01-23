@@ -1,91 +1,96 @@
 ---
 import thumbnail from "../images/thumbnail.png";
+import async from "../images/async.gif";
+import notation from "../images/notation.png";
+import primitive from "../images/primitive.gif";
 ---
 
+<h1
+  class="text-4xl font-bold text-dark ml-8 md:ml-16 underline decoration-teal decoration-wavy decoration-4"
+>
+  Read more from me
+</h1>
+<div
+  class="md:grid grid-cols-3 mx-8 md:mx-16 gap-6 items-center mt-8 mb-10 block"
+>
+  <article
+    class="overflow-hidden rounded-lg shadow transition hover:shadow-lg mb-5"
+  >
+    <img alt="Office" src={async} class="h-56 w-full object-cover" />
 
-<h1 class="text-4xl font-bold text-dark ml-16 underline decoration-teal decoration-wavy decoration-4">Read more from me</h1>
-<div class="grid grid-cols-3 mx-16 gap-6 items-center mt-8 mb-10">
-    <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-        <img
-          alt="Office"
-          src={thumbnail}
-          class="h-56 w-full object-cover"
-        />
-      
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-10-10" class="block text-xs text-gray-500">
-            10th Oct 2022
-          </time>
-      
-          <a href="#">
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              How to position your furniture for positivity
-            </h3>
-          </a>
-      
-          <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-            sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta?
-          </p>
-        </div>
-      </article>
+    <div class="bg-white p-4 sm:p-6">
+      <time class="block text-xs text-gray-500"> 2022-11-14</time>
 
+      <a
+        href="https://www.freecodecamp.org/news/asynchronous-javascript-explained/"
+      >
+        <h3 class="mt-0.5 text-lg text-gray-900">
+          Asynchronous JavaScript – Callbacks, Promises, and Async/Await
+          Explained
+        </h3>
+      </a>
 
-      <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-        <img
-          alt="Office"
-          src={thumbnail}
-          class="h-56 w-full object-cover"
-        />
-      
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-10-10" class="block text-xs text-gray-500">
-            10th Oct 2022
-          </time>
-      
-          <a href="#">
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              How to position your furniture for positivity
-            </h3>
-          </a>
-      
-          <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-            sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta?
-          </p>
-        </div>
-      </article>
+      <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+        In this article, I show you the basic intricacies of asynchronous
+        JavaScript. I take you through Callbacks, Promises, and the famous
+        async/await.
+      </p>
+    </div>
+  </article>
 
-      <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-        <img
-          alt="Office"
-          src={thumbnail}
-          class="h-56 w-full object-cover"
-        />
-      
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-10-10" class="block text-xs text-gray-500">
-            10th Oct 2022
-          </time>
-      
-          <a href="#">
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              How to position your furniture for positivity
-            </h3>
-          </a>
-      
-          <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium dolore
-            sed nulla ipsum eveniet corporis quidem, mollitia itaque minus soluta?
-          </p>
-        </div>
-      </article>
+  <article
+    class="overflow-hidden rounded-lg shadow transition hover:shadow-lg mb-5"
+  >
+    <img alt="Office" src={notation} class="h-56 w-full object-cover" />
 
+    <div class="bg-white p-4 sm:p-6">
+      <time class="block text-xs text-gray-500"> 2022-08-02</time>
+
+      <a
+        href="https://www.freecodecamp.org/news/how-to-add-animation-to-your-site-with-rough-notation/"
+      >
+        <h3 class="mt-0.5 text-lg text-gray-900">
+          How to Use Rough Notation to Animate your Website
+        </h3>
+      </a>
+
+      <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+        You do not need a huge library to add animations to your website. In
+        this article, I bring to you Rough Notation, a simple library to get you
+        started with cute animations.
+      </p>
+    </div>
+  </article>
+
+  <article
+    class="overflow-hidden rounded-lg shadow transition hover:shadow-lg mb-5"
+  >
+    <img alt="Office" src={primitive} class="h-56 w-full object-cover" />
+
+    <div class="bg-white p-4 sm:p-6">
+      <time class="block text-xs text-gray-500"> 2022-01-18</time>
+
+      <a
+        href="https://www.freecodecamp.org/news/primitive-vs-reference-data-types-in-javascript/"
+      >
+        <h3 class="mt-0.5 text-lg text-gray-900">
+          Primitive vs Reference Data Types in JavaScript, and their Differences
+        </h3>
+      </a>
+
+      <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+        The computer does not store all typesof data the same way. But how then
+        does it manage these data types, and how is JavaScipt related to all
+        that. Read on to find out more.
+      </p>
+    </div>
+  </article>
 </div>
 
 <div class="text-center">
-  <a href="/blog/" class="border-2 rounded-full border-teal text-teal hover:bg-teal hover:text-snow px-3 py-2 font-bold">See more articles</a>
+  <a
+    href="/blog/"
+    class="border-2 rounded-full border-teal text-teal hover:bg-teal hover:text-snow px-3 py-2 font-bold"
+    >See more articles</a
+  >
 </div>

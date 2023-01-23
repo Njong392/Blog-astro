@@ -1,34 +1,70 @@
 ---
-	import logo from "../images/logo.png";
+import logo from "../images/logo.png";
 ---
 
 <div class="flex justify-between text-dark items-center px-12">
-    <div>
-        
-        <a href="/" class="cursor-pointer">
-            <img src={logo} alt="" width="130">
-        </a>
-    </div>
-    
-    <div>
-        <a class="group relative inline-block text-sm font-medium text-teal focus:outline-none focus:ring active:text-indigo-500" href="/">
-            <span class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+  <div>
+    <a href="/" class="cursor-pointer">
+      <img src={logo} alt="" width="130" />
+    </a>
+  </div>
 
-            <span class="relative block border border-current bg-snow px-8 py-3">Home</span>
-        </a>
+  <div class="hidden md:block">
+    <a
+      class="group relative inline-block text-sm font-medium text-teal focus:outline-none focus:ring active:text-indigo-500"
+      href="/"
+    >
+      <span
+        class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+      ></span>
 
-        <a class="group relative inline-block text-sm font-medium text-teal focus:outline-none focus:ring active:text-indigo-500" href="/blog/">
-            <span class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+      <span class="relative block border border-current bg-snow px-8 py-3"
+        >Home</span
+      >
+    </a>
 
-            <span class="relative block border border-current bg-snow px-8 py-3">Articles</span>
-        </a>
+    <a
+      class="group relative inline-block text-sm font-medium text-teal focus:outline-none focus:ring active:text-indigo-500"
+      href="/blog/"
+    >
+      <span
+        class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+      ></span>
 
-        <a class="group relative inline-block text-sm font-medium text-teal focus:outline-none focus:ring active:text-indigo-500" href="/">
-            <span class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"></span>
+      <span class="relative block border border-current bg-snow px-8 py-3"
+        >Articles</span
+      >
+    </a>
 
-            <span class="relative block border border-current bg-snow px-8 py-3">Portfolio</span>
-        </a>
+    <a
+      class="group relative inline-block text-sm font-medium text-teal focus:outline-none focus:ring active:text-indigo-500"
+      href="/"
+    >
+      <span
+        class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+      ></span>
 
+      <span class="relative block border border-current bg-snow px-8 py-3"
+        >Portfolio</span
+      >
+    </a>
+  </div>
 
-    </div>
+  <di class="md:hidden">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6 text-dark cursor-pointer"
+      role="menu"
+      id="menu"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+    </svg>
+  </di>
 </div>
