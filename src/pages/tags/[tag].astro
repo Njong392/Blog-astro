@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md");
+  const allPosts = await Astro.glob("../posts/*.mdx");
 
   return [
     { params: { tag: "astro" }, props: { posts: allPosts } },
@@ -48,7 +48,7 @@ const filteredPosts = posts.filter((post) =>
               </h3>
             </a>
 
-            <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3 truncate">
               {post.frontmatter.description}
             </p>
           </div>
