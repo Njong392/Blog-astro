@@ -10,8 +10,8 @@ image:
 tags: ["tailwindcss", "frameworks", "bootstrap"]
 ---
 
-<article class="prose lg:prose-xl">
-  # Garlic bread with cheese: What the science tells us
+<article class="prose md:prose-base prose-headings:underline max-w-none prose-sm">
+<h1>Garlic bread with cheese: What the science tells us</h1>
   <p>
     For years parents have espoused the health benefits of eating garlic bread with cheese to their
     children, with the food earning such an iconic status in our culture that kids will often dress
@@ -22,7 +22,8 @@ tags: ["tailwindcss", "frameworks", "bootstrap"]
     springing up around the country.
   </p>
 
-  <ul>
-    <li>List</li>
-  </ul>
+  ```javascript
+  const test = q;
+  ```
+  <!-- ... -->
 </article>

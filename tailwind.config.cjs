@@ -1,6 +1,7 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
-  purge: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,vue}"],
+  purge: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,vue,md}"],
   theme: {
     colors: {
       teal: "#6ab8a7",
@@ -15,6 +16,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography')
+    require("@tailwindcss/typography")
   ],
 };

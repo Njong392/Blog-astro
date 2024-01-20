@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.mdx");
+  const allPosts = await Astro.glob("../posts/*.md");
 
   return [
     { params: { tag: "astro" }, props: { posts: allPosts } },

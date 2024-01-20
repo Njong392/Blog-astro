@@ -5,18 +5,34 @@ import Navigation from "../components/Navigation.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Navigation />
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
 
-<img src={frontmatter.image.url} alt={frontmatter.image.alt} class="mx-[50px] w-[90%]  mt-[30px]"/>
-<div>
-    <h1 class="text-6xl font-bold mx-[90px] mt-7"> {frontmatter.title} </h1>
-    <p class="mt-3 mx-[90px] md:text-sm text-lg">Published on {frontmatter.pubDate.slice(0, 10)}</p>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    </head>
+    <body>
+        <Navigation />
+
+<div class="flex justify-center">
+    <img src={frontmatter.image.url} alt={frontmatter.image.alt} class="w-[80%]  mt-[30px] border-2 border-teal"/>
 </div>
-<div class="m-[50px] p-[40px] md:text-2xl text-3xl">
+
+<div>
+    <h1 class="lg:text-6xl font-bold mx-[10%] mt-7 text-4xl md:text-5xl"> {frontmatter.title} </h1>
+    <p class="mt-3 mx-[10%] md:text-sm text-lg">Published on {frontmatter.pubDate.slice(0, 10)}</p>
+</div>
+
+<div class="m-[50px] md:px-[4%] sm:px-0 lg:px-[6%]">
     <slot />
 </div>
 
 
 <script>
-    import "../scripts/menu.js"
+    import "../scripts/menu"
 </script>
+
+    </body>
+
+</html>
