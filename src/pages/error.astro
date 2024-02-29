@@ -1,0 +1,43 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+    <Navigation />
+
+    <div class="grid h-screen place-content-center bg-white px-4">
+  <div class="text-center">
+    <h1 class="text-9xl font-black text-gray">404</h1>
+
+    <p class="text-2xl font-bold tracking-tight text-dark sm:text-4xl">Uh-oh!</p>
+
+    <p class="mt-4 text-gray-500">No articles yet!</p>
+
+    <a
+      href="/"
+      class="mt-6 inline-block rounded bg-teal px-5 py-3 text-sm font-medium text-white text-dark fon-bold focus:outline-none focus:ring"
+    >
+      Go Back Home
+    </a>
+  </div>
+</div>
+
+    <div class="bottom-0 w-full flex justify-center p-3 bg-teal">
+      <Footer />
+    </div>
+
+    
+    <script>
+      import "../scripts/menu.js"
+    </script>
+    
+</body>
+</html>

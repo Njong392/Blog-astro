@@ -5,12 +5,8 @@ export async function getStaticPaths() {
   const allPosts = await Astro.glob("../posts/*.md");
 
   return [
-    { params: { tag: "astro" }, props: { posts: allPosts } },
-    { params: { tag: "successes" }, props: { posts: allPosts } },
-    { params: { tag: "community" }, props: { posts: allPosts } },
-    { params: { tag: "blogging" }, props: { posts: allPosts } },
-    { params: { tag: "setbacks" }, props: { posts: allPosts } },
-    { params: { tag: "learning in public" }, props: { posts: allPosts } },
+    { params: { tag: "check again soon" }, props: { posts: allPosts } },
+    
   ];
 }
 

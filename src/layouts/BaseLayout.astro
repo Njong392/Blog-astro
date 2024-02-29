@@ -80,16 +80,28 @@ const { pageTitle } = Astro.props;
       <div class="flex m-8 md:m-16 flex-wrap gap-3">
         {
           tags.map((tag) => (
-            <a
-              class="group relative inline-block focus:outline-none focus:ring"
-              href={`/tags/${tag}`}
-            >
-              <span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0" />
+            /*
+                        <a
+                          class="group relative inline-block focus:outline-none focus:ring"
+                          href={`/tags/${tag}`}
+                        >
+                          <span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0" />
 
-              <span class="relative inline-block border-2 border-current md:px-4 md:py-3 px-2 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">
-                {tag}
-              </span>
-            </a>
+                          <span class="relative inline-block border-2 border-current md:px-4 md:py-3 px-2 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">
+                            {tag}
+                          </span>
+                        </a>
+            */
+            <a
+                          class="group relative inline-block focus:outline-none focus:ring"
+                          href='/error/'
+                        >
+                          <span class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-teal transition-transform group-hover:translate-y-0 group-hover:translate-x-0" />
+
+                          <span class="relative inline-block border-2 border-current md:px-4 md:py-3 px-2 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">
+                            {tag}
+                          </span>
+                        </a>
           ))
         }
       </div>
