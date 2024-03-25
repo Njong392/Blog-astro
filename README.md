@@ -1,6 +1,6 @@
 # 🔥My Blog is here!
 
-After months of digging and toiling with astro, my blog is finally ready! I had a lot of fun building this one, and I'm sure I'll have just as much fun updating it with my articles.
+After months of digging and toiling with astro, my blog is finally ready! I had a lot of fun building this one, and I'm sure I'll have just as much fun updating it with my articles (that is if i don't procrastinate till i dai ohoho)
 
 ![Image of upper half of blog with navbar, hero section with an image of a keyboard, and a FCC article](localhost_3000_.png)
 
