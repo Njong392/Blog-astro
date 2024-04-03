@@ -25,17 +25,13 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>{post.title}</title>
-  </head>
-  <body>
-    <img src={post.feature_image} alt={post.title} />
 
-    <h1>{post.title}</h1>
-    <p>{post.reading_time} min read</p>
+<article
+  class="prose md:prose-base prose-headings:underline max-w-none prose-sm"
+>
+  <img src={post.feature_image} alt={post.title} />
+  <h1>{post.title}</h1>
+  <p>{post.reading_time}</p>
 
-    <Fragment set:html={post.html} />
-  </body>
-</html>
+  <Fragment set:html={post.html} />
+</article>
