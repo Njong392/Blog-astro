@@ -4,10 +4,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 export async function getStaticPaths() {
   const allPosts = await Astro.glob("../posts/*.md");
 
-  return [
-    { params: { tag: "check again soon" }, props: { posts: allPosts } },
-    
+   return [
+    { params: { tag: "Vue" }, props: { posts: allPosts } },
+    { params: { tag: "JavaScript" }, props: { posts: allPosts } },
+    { params: { tag: "WebDev" }, props: { posts: allPosts } },
+
   ];
+
 }
 
 const { tag } = Astro.params;

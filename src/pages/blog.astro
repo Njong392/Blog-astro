@@ -5,6 +5,16 @@ import BlogPost from "../components/BlogPost.astro";
 import Footer from "../components/Footer.astro";
 import { ghostClient } from "../lib/ghost";
 
+// Format the date
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(date);
+};
+
 const posts = await ghostClient.posts
   .browse({
     limit: "all",
@@ -40,8 +50,8 @@ const posts = await ghostClient.posts
             url={`/posts/${post.slug}`}
             title={post.title}
             thumbnail={post.feature_image}
-            description={post.description}
-            publishedAt={post.published_at}
+            description={post.custom_excerpt}
+            publishedAt={formatDate(post.published_at)}
           />
         ))
       }

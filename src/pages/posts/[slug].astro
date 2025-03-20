@@ -1,5 +1,7 @@
 ---
 import { ghostClient } from "../../lib/ghost";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
   const posts = await ghostClient.posts
@@ -9,6 +11,8 @@ export async function getStaticPaths() {
     .catch((err) => {
       console.error(err);
     });
+
+  console.log("posts", posts);
 
   return posts.map((post) => {
     return {
@@ -25,13 +29,21 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 ---
 
+<body>
+  <Navigation />
+  <div class="flex justify-center items-center min-h-screen px-4 md:px-16">
+    <article
+      class="prose md:prose-base lg:prose-xl w-full max-w-3xl mt-5"
+    >
+      <img src={post.feature_image} alt={post.title} class="mx-auto" />
+      <h1>{post.title}</h1>
+      <h6 class="font-bold">{post.reading_time} min read</h6>
 
-<article
-  class="prose md:prose-base prose-headings:underline max-w-none prose-sm"
->
-  <img src={post.feature_image} alt={post.title} />
-  <h1>{post.title}</h1>
-  <p>{post.reading_time}</p>
+      <Fragment set:html={post.html} />
+    </article>
+  </div>
 
-  <Fragment set:html={post.html} />
-</article>
+  <div class="bottom-0 w-full flex justify-center p-3 bg-teal mt-10">
+    <Footer />
+  </div>
+</body>

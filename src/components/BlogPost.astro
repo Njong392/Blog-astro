@@ -12,16 +12,16 @@ const { title, url, thumbnail, description, publishedAt } = Astro.props;
     <img alt="Office" src={thumbnail} class="h-56 w-full object-cover" />
 
     <div class="bg-white p-4 sm:p-6">
-      <time class="block text-xs text-gray-500"> {publishedAt}</time>
+      <time class="block text-xs"> {publishedAt}</time>
 
       <a href={url}>
-        <h3 class="mt-0.5 text-lg text-gray-900">
+        <h3 class="mt-0.5 text-xl font-bold text-gray-900 text-teal">
           {title}
         </h3>
       </a>
 
       <p
-        class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3 truncate"
+        class="mt-2 text-lg leading-relaxed line-clamp-3"
       >
         {description}
       </p>
