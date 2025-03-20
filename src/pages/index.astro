@@ -1,6 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { ghostClient } from "../lib/ghost";
+
 const pageTitle = "Home";
+const posts = await ghostClient.posts
+  .browse({
+    limit: "all",
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 ---
 
 <BaseLayout pageTitle={pageTitle} />

@@ -1,5 +1,8 @@
 ---
-const { title, url, thumbnail, description } = Astro.props;
+import { ghostClient } from "../lib/ghost";
+
+const { title, url, thumbnail, description, publishedAt } = Astro.props;
+
 ---
 
 <li>
@@ -9,15 +12,17 @@ const { title, url, thumbnail, description } = Astro.props;
     <img alt="Office" src={thumbnail} class="h-56 w-full object-cover" />
 
     <div class="bg-white p-4 sm:p-6">
-      <time class="block text-xs text-gray-500"> 2022-11-14</time>
+      <time class="block text-xs"> {publishedAt}</time>
 
       <a href={url}>
-        <h3 class="mt-0.5 text-lg text-gray-900">
+        <h3 class="mt-0.5 text-xl font-bold text-gray-900 text-teal">
           {title}
         </h3>
       </a>
 
-      <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3 truncate">
+      <p
+        class="mt-2 text-lg leading-relaxed line-clamp-3"
+      >
         {description}
       </p>
     </div>
